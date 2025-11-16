@@ -1,0 +1,15 @@
+{
+  "name": "user/mini-crawler",
+  "description": "Mini PHP CLI web crawler (Saves products to SQLite)",
+  "require": {
+    "php": ">=8.0",
+    "simplehtmldom/simplehtmldom": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "MiniCrawler\\": "src/"
+    }
+  },
+  "minimum-stability": "RC",
+  "prefer-stable": true
+}
