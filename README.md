@@ -1,8 +1,7 @@
 # Mini PHP Web Crawler with SQLite
 
-
 ## Requirements
-- PHP 8+ / Web Server
+- PHP 8+ (Server)
 - CLI access
 - Composer (to install `simplehtmldom`)
 
@@ -37,12 +36,12 @@ php app.php urls.txt products.sqlite log.txt
 - Saves results into a SQLite database (`products.sqlite`)
 - Logs warnings and failed requests into `log.txt`
 
-## Files to view / edit
+## Ι/Ο files
 - `urls.txt` - Sample URLs list
 - `products.sqlite` - SQLite DB
 - `log.txt` - Log file
 
 ## Notes
 The parser uses flexible CSS selectors and fallback heuristics, but the collection of arbitrary websites is not reliable. 
-We must adjust selectors in `src/Parser.php` for every target site(s).
+You must adjust selectors in `src/Parser.php` for every target site(s).
 

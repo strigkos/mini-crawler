@@ -64,10 +64,10 @@ class Crawler
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_TIMEOUT, 15);
         curl_setopt($ch, CURLOPT_USERAGENT, 'MiniCrawler/1.0 (+https://example.local)');
-        
+        /*
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0); // disable host check
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0); // disable peer verification
-        
+        */
         $data = curl_exec($ch);
         $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $err = curl_error($ch);
