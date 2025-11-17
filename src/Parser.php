@@ -19,7 +19,7 @@ class Parser
     public function parse(string $html, string $url): array
     {
         // Using simple_html_dom (composer package simplehtmldom)
-        $dom = new HtmlDocument();
+        $dom = new HtmlDocument('');
         $dom->load($html);
 
         // Heuristics - try common selectors; you should adjust these per site
