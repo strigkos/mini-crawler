@@ -24,27 +24,27 @@ class Parser
 
         // Heuristics - try common selectors; you should adjust these per site
         $title = $this->firstText($dom, [
-            'meta[property="og:title"]', 
-            'h1', 
             'title',
+            'meta[property="og:title"]', 
             '.product-title',
-            '[itemprop="name"]'
+            '[itemprop="name"]',
+            'h1',
         ]);
 
         $price = $this->firstText($dom, [
-            '[itemprop="price"]',
             '.price',
             '.product-price',
             '.woocommerce-Price-amount',
-            '[class*=\"price\"]'
+            '[class*=\"price\"]',
+            '[itemprop="price"]'
         ]);
 
         $availability = $this->firstText($dom, [
-            '[itemprop="availability"]',
             '.availability',
             '.stock',
             '.product-stock',
-            '[class*=\"availability\"]'
+            '[class*=\"availability\"]',
+            '[itemprop="availability"]',
         ]);
 
         // Clean up
@@ -55,7 +55,7 @@ class Parser
         return [
             'title' => $title,
             'price' => $price,
-            'availability' => $availability,
+            'availability' => $availability ?: 'In Stock',
             'scraped_at' => date('c'),
         ];
     }

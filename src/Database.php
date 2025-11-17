@@ -44,7 +44,7 @@ class Database
             ':url' => $url,
             ':title' => $data['title'] ?? '',
             ':price' => $data['price'] ?? '',
-            ':availability' => $data['availability'] ?? '',
+            ':availability' => $data['availability'] ?? 'In Stock',
             ':scraped_at' => $data['scraped_at'] ?? date('c'),
         ]);
         $this->logger->info("Saved product: $url");
